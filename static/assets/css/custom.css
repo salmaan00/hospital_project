@@ -1,0 +1,28 @@
+body {
+  background-color: #f8f9fa;
+  background-image: url('../imag/doctorlog.png'); /* Add your background illustration */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.btn-block {
+  width: 100%;
+}

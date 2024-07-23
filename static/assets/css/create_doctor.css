@@ -1,0 +1,66 @@
+/* Reset some default styles */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #0056b3;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
+    text-align: center;
+    padding: 15px;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #003366;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #4e555b;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-control, .form-control:focus {
+    border-color: #0056b3;
+    box-shadow: none;
+}
+
+.btn-block {
+    margin-top: 15px;
+}

@@ -1,0 +1,39 @@
+<!-- medical_history.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <title>Medical History</title>
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+</head>
+<body>
+  <header>
+    <!-- Navigation bar -->
+  </header>
+
+  <div class="container">
+    <h1 class="text-center mt-5">Medical History</h1>
+    {% if medical_history %}
+      <ul>
+        {% for history in medical_history %}
+          <li>
+            <strong>Diagnosis:</strong> {{ history.diagnosis }}<br>
+            <strong>Treatment:</strong> {{ history.treatment }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No medical history found.</p>
+    {% endif %}
+  </div>
+    </div>
+
+      <a href="{% url 'patient_profile' %}" class="btn btn-secondary mt-4">Back to Profile</a>
+    </div>
+
+  <footer>
+    <!-- Footer -->
+  </footer>
+</body>
+</html>

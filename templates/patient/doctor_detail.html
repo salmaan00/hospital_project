@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ doctor.first_name }} {{ doctor.last_name }}</h1>
+<p>Specialization: {{ doctor.specialization }}</p>
+<p>Email: {{ doctor.email }}</p>
+<p>Phone: {{ doctor.phone }}</p>
+<a href="{% url 'patient:book_consultation' doctor.pk %}">Book Consultation</a>
+{% endblock %}

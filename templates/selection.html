@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select User Type</title>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Select Your User Type</h2>
+        <div class="text-center">
+            <a href="{% url 'patient_register' %}" class="btn btn-primary m-3">Patient</a>
+            <a href="{% url 'doctor_register' %}" class="btn btn-secondary m-3">Doctor</a>
+        </div>
+    </div>
+</body>
+</html>

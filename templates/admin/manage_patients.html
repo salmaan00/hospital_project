@@ -1,0 +1,17 @@
+<!-- templates/admin/manage_patients.html -->
+<h1>Manage Patients</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for patient in patients %}
+    <tr>
+        <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+        <td>
+            <a href="{% url 'edit_patient' patient.pk %}">Edit</a>
+            <a href="{% url 'delete_patient' patient.pk %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

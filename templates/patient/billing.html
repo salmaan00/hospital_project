@@ -1,0 +1,45 @@
+<!-- billing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <title>Billing Details</title>
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+</head>
+<body>
+  <header>
+    <!-- Navigation bar -->
+  </header>
+
+  <div class="container">
+    <h1 class="text-center mt-5">Billing Details</h1>
+    {% if billing %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for bill in billing %}
+            <tr>
+              <td>{{ bill.date }}</td>
+              <td>${{ bill.amount }}</td>
+              <td>{{ bill.status }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No billing information found.</p>
+    {% endif %}
+  </div>
+
+  <footer>
+    <!-- Footer -->
+  </footer>
+</body>
+</html>

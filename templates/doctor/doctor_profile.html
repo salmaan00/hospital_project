@@ -1,0 +1,76 @@
+
+<!-- doctor/templates/doctor/doctor_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Doctor Profile - One Health</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupport">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'doctor_dashboard' %}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'doctor_logout' %}">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="page-section">
+    <div class="container">
+      <h1 class="text-center mb-5">Doctor Profile</h1>
+
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <img src="{% static 'assets/img/doctors/default.jpg' %}" class="card-img-top" alt="Doctor Photo">
+            <div class="card-body">
+              <h5 class="card-title">{{ profile.first_name }} {{ profile.last_name }}</h5>
+              <p class="card-text">Specialization: {{ profile.specialization }}</p>
+              <p class="card-text">Email: {{ profile.email }}</p>
+              <p class="card-text">Phone: {{ profile.phone }}</p>
+              <p class="card-text">Available: {{ profile.is_available|yesno:"Yes,No" }}</p>
+              <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+              <a href="{% url 'delete_profile' %}" class="btn btn-danger">Delete Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <p class="text-center">© 2024 One Health. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/theme.js' %}"></script>
+
+</body>
+</html>

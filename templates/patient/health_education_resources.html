@@ -1,0 +1,39 @@
+<!-- health_education_resources.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <title>Health Education Resources</title>
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+</head>
+<body>
+  <header>
+    <!-- Navigation bar -->
+  </header>
+
+  <div class="container">
+    <h1 class="text-center mt-5">Health Education Resources</h1>
+    {% if resources %}
+      <ul>
+        {% for resource in resources %}
+          <li>
+            <h3>{{ resource.title }}</h3>
+            <p>{{ resource.content }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No resources available.</p>
+    {% endif %}
+  </div>
+    </div>
+
+      <a href="{% url 'patient_profile' %}" class="btn btn-secondary mt-4">Back to Profile</a>
+    </div>
+
+  <footer>
+    <!-- Footer -->
+  </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Detail</title>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'patient_profile' %}">One Health</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'patient_profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'doctor_list' %}">Doctors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'prescription_list' %}">Prescriptions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'result_list' %}">Results</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="{% url 'logouts' %}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Appointment Detail</h1>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Doctor: {{ appointment.doctor.first_name }} {{ appointment.doctor.last_name }}</h5>
+                <p class="card-text">Date: {{ appointment.date }}</p>
+                <p class="card-text">Time: {{ appointment.time }}</p>
+                <p class="card-text">Details: {{ appointment.details }}</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-4">
+        <p>Copyright &copy; 2023. One Health.</p>
+    </footer>
+
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

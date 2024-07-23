@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Consultation History</h1>
+<ul>
+  {% for consultation in consultations %}
+    <li>
+      Dr. {{ consultation.doctor.first_name }} {{ consultation.doctor.last_name }}
+      - {{ consultation.date }}
+      <br>
+      Notes: {{ consultation.notes }}
+      <br>
+      Result: {{ consultation.result }}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
